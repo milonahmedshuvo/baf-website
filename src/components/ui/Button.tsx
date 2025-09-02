@@ -19,6 +19,7 @@ const Button = ({
   size,
   href,
 }: ButtonColor) => {
+  
   const variants: Record<"white" | "black" | "orange", string> = {
     white: "text-neutral-900 bg-neutral-900",
     black: "text-white border hover:border-white",
