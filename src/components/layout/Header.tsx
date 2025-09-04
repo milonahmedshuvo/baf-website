@@ -1,113 +1,101 @@
+"use client";
+
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import DrawerComponent from "../ui/Drawer";
-import logo from '@/assets/images/logo_title.png'
+import logo from "@/assets/images/logo_title.png";
 import Image from "next/image";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-
   return (
     <header className="w-full bg-white shadow-sm sticky top-0 z-50 max-w-7xl mx-auto px-3 ">
-
-
       <div className="flex items-center justify-between py-4 px-2">
-
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image src={logo} width={200} height={500} alt="logo-title" />
         </Link>
 
-
-
-      
         {/* Right side container */}
-        <div className="flex items-center"> 
+        <div className="flex items-center">
+          {/* Desktop Menu */}
+          <nav className="hidden lg:flex items-center text-black  ">
+            {[
+              { name: "Home", href: "/" },
+              { name: "Athletes", href: "/team" },
+              { name: "Events", href: "/event" },
+              { name: "News", href: "/blog" },
+              { name: "Gallery", href: "/gallery" },
+              { name: "About", href: "/about" },
+              { name: "Contact", href: "/contact" },
+            ].map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="px-4 py-3 transition-all duration-300 ease-in-out text-[#444444] hover:text-[#e41b23] font-semibold w-full m-0 text-sm uppercase"
+              >
+                {item.name}
+              </Link>
+            ))}
 
-        {/* Desktop Menu */}
-        <nav className="hidden lg:flex items-center text-black  ">
-          {[
-            { name: "Home", href: "/" },
-            { name: "Athletes", href: "/team" },
-            { name: "Events", href: "/event" },
-            { name: "News", href: "/blog" },
-            { name: "Gallery", href: "/gallery" },
-            { name: "About", href: "/about" },
-            { name: "Contact", href: "/contact" },
-          ].map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="px-4 py-3 transition-all duration-300 ease-in-out text-[#444444] hover:text-[#e41b23] font-semibold w-full m-0 text-sm uppercase"
-            >
-              {item.name}
-            </Link>
-          ))}
+            {/* Dropdown */}
+            <div className="relative group">
+              <button className="uration-300 ease-in-out text-[#444444] hover:text-[#e41b23] font-semibold w-full m-0 text-sm uppercase cursor-pointer">
+                Register
+              </button>
+              <ul className="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 min-w-[180px] border border-red-500 ">
+                <li>
+                  <Link
+                    href="/shop"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Athletes
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/shop"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Coach
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/shop"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                  >
+                    Become a Sponsor
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
 
-
-
-          {/* Dropdown */}
-          <div className="relative group">
-            <button className="uration-300 ease-in-out text-[#444444] hover:text-[#e41b23] font-semibold w-full m-0 text-sm uppercase cursor-pointer">
-              Register
+          {/* Right Side Buttons */}
+          <div className="flex items-center gap-4 pl-7 ">
+            <button className="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-md text-sm font-medium transition-colors">
+              LOGIN
             </button>
-            <ul className="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 min-w-[180px] border border-red-500 ">
-              <li>
-                <Link
-                  href="/shop"
-                  className="block px-4 py-2 hover:bg-gray-100"
-                >
-                  Athletes
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/shop"
-                  className="block px-4 py-2 hover:bg-gray-100"
-                >
-                  Coach
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/shop"
-                  className="block px-4 py-2 hover:bg-gray-100"
-                >
-                  Become a Sponsor
-                </Link>
-              </li>
-            </ul>
-          </div>    
-        </nav>
-
-        {/* Right Side Buttons */}
-        <div className="flex items-center gap-4 pl-7 ">  
-          <button className="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-md text-sm font-medium transition-colors">
-            LOGIN
-          </button>
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className=" p-2 rounded bg-black text-white"
-          >
-            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className=" p-2 rounded bg-black text-white"
+            >
+              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
-
-       </div>
-         
-
       </div>
 
-
-
       {/* Mobile Menu */}
-      {
-        isMenuOpen && (
-          <DrawerComponent open={isMenuOpen} setOpen={setIsMenuOpen} ></DrawerComponent>
-        )
-      }
+      {isMenuOpen && (
+        <DrawerComponent
+          open={isMenuOpen}
+          setOpen={setIsMenuOpen}
+        ></DrawerComponent>
+      )}
 
       {/* {isMenuOpen && (
         <div className=" bg-white shadow-lg border-t w-1/2  ">
@@ -178,8 +166,6 @@ export default function Header() {
 
         </div>
       )} */}
-
-
     </header>
   );
 }

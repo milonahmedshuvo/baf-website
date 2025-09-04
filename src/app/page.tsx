@@ -1,20 +1,19 @@
-'use client'
+import AdBanner from "@/components/Home/AdBanner";
+import AthleticsAboutSection from "@/components/Home/AthleticsAbout";
+import Hero from "@/components/Home/Hero";
 
-import AdBanner from "@/components/layout/AdBanner";
-import AthleticsAboutSection from "@/components/layout/AthleticsAbout";
-import Header from "@/components/layout/Header";
+import React from "react";
 
-
-
-export default function Home() {
-
-
-  
+const HomePage = () => {
   return (
-   <div>
-     <Header/>
-     <AdBanner/>
-     <AthleticsAboutSection/>
-   </div>
+    <div>
+      {/* <AdBanner /> */}
+      {/* <AthleticsAboutSection /> */}
+      <Hero />
+      <AdBanner />
+      <AthleticsAboutSection />
+    </div>
   );
-}
+};
+
+export default HomePage;
