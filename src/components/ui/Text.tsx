@@ -15,7 +15,7 @@ type TextProps = {
     | "semibold"
     | "bold"
     | "extrabold"
-    | "black";
+    | "black"
   color?: 'white'|'gray'|'black' 
 };
 

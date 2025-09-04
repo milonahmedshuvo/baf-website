@@ -26,6 +26,11 @@ body {
 }
 
 
+/* app/globals.css */
+* {
+  font-family: 'Oswald', sans-serif;
+}
+
 /* utils container  */
 .container {
   max-width: 80rem;   /* Tailwind's max-w-7xl = 1280px = 80rem */

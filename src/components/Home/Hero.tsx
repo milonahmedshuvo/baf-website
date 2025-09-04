@@ -2,7 +2,7 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
-import { ArrowRight, Sparkles } from "lucide-react";
+import {  Sparkles } from "lucide-react";
 import Image from "next/image";
 
 import bg1 from "@/assets/images/home/banner/banner-bg1.jpg";
@@ -13,6 +13,7 @@ import img2 from "@/assets/images/home/banner/banner2.jpg";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
+import Button from "../ui/Button";
 
 const heroSlides = [
   {
@@ -21,8 +22,8 @@ const heroSlides = [
     title: "ARTIFICIAL INTELLIGENCE & MACHINE LEARNING REVOLUTION",
     description:
       "Transform your business with cutting-edge AI solutions that drive innovation and growth in the digital age.",
-    primaryButton: "EXPLORE AI SOLUTIONS",
-    secondaryButton: "GET STARTED",
+    primaryButton: "Event Explore",
+    secondaryButton: "Register now",
     image: img,
     backgroundImage: bg1,
   },
@@ -32,14 +33,23 @@ const heroSlides = [
     title: "DEEP LEARNING & NEURAL NETWORKS MASTERY",
     description:
       "Harness the power of advanced algorithms to solve complex problems and unlock new possibilities.",
-    primaryButton: "DISCOVER MORE",
-    secondaryButton: "JOIN NOW",
+    primaryButton: "Event Explore",
+    secondaryButton: "Register now",
     image: img2,
     backgroundImage: bg2,
   },
 ];
 
+
 export default function AIHeroSlider() {
+
+
+  const handleEploreEvent = () => {
+
+  }
+
+
+
   return (
     <section className="relative h-screen overflow-hidden">
       <Swiper
@@ -90,30 +100,20 @@ export default function AIHeroSlider() {
 
                       {/* Main Title */}
                       <div className="transform transition-all duration-1000 ease-out delay-200 translate-y-0 opacity-100">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                        <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight">
                           <span className="text-balance">{slide.title}</span>
                         </h1>
                       </div>
 
-                      {/* Description */}
-                      <div className="transform transition-all duration-1000 ease-out delay-400 translate-y-0 opacity-100">
-                        <p className="text-lg text-gray-200 leading-relaxed">
-                          {slide.description}
-                        </p>
-                      </div>
+                     
 
                       {/* Buttons */}
-                      <div className="transform transition-all duration-1000 ease-out delay-600 translate-y-0 opacity-100">
+                     
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                          <button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-red-900 font-bold px-8 py-4 group transition-all duration-300 uppercase tracking-wide flex items-center">
-                            {slide.primaryButton}
-                            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                          </button>
-                          <button className="bg-white text-red-900 hover:bg-gray-100 font-bold px-8 py-4 group transition-all duration-300 uppercase tracking-wide flex items-center">
-                            {slide.secondaryButton}
-                            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                          </button>
-                        </div>
+
+                          <Button variant="black" buttonEvent={handleEploreEvent} >{slide.primaryButton}</Button>
+                          <Button variant="white" buttonEvent={handleEploreEvent} >{slide.secondaryButton}</Button>
+                          
                       </div>
                     </div>
                   </div>
