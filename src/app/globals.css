@@ -31,13 +31,25 @@ body {
   font-family: 'Oswald', sans-serif;
 }
 
+.roboto-font {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
 /* utils container  */
 .container {
-  max-width: 80rem;   /* Tailwind's max-w-7xl = 1280px = 80rem */
-  margin-left: auto;  /* mx-auto → center horizontally */
+  max-width: 80rem;  
+  margin-left: auto;  
   margin-right: auto;
   padding-left: 0.75rem;  /* px-3 = 0.75rem = 12px */
   padding-right: 0.75rem;
+}
+
+.main_container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .fw-400 {

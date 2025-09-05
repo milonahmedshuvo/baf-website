@@ -16,11 +16,13 @@ type TextProps = {
     | "bold"
     | "extrabold"
     | "black"
-  color?: 'white'|'gray'|'black' 
+  color?: 'white'|'gray'|'black';
+  className?: string 
 };
 
 
-const Text = ({ size='base', weight='normal', color='white', children, as: Component = "p" }: TextProps) => {
+const Text = ({ size='base', weight='normal', color='white', children, as: Component = "p", className }: TextProps) => {
+
   const sizeClasses: Record< NonNullable<TextProps['size']>, string> = {
     sm: "text-sm",
     base: "text-base",
@@ -46,10 +48,10 @@ const Text = ({ size='base', weight='normal', color='white', children, as: Compo
     black: "text-black",
   }
 
-
+ 
 
   return (
-    <Component className={`${sizeClasses[size]} ${weightClass[weight]} ${colorClass[color]} `}>
+    <Component className={`${sizeClasses[size]} ${weightClass[weight]} ${colorClass[color]} ${className} `}>
       {children}
     </Component>
   );

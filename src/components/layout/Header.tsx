@@ -11,7 +11,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="w-full bg-white shadow-sm sticky top-0 z-50 max-w-7xl mx-auto px-3 ">
+    <header className="w-full bg-white shadow-sm sticky top-0 z-50 container ">
       <div className="flex items-center justify-between py-4 px-2">
         {/* Logo */}
         <Link href="/" className="flex items-center">

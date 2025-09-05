@@ -10,12 +10,14 @@ type ButtonColor = {
   size?: "small" | "medium";
   href?: string;
   buttonEvent?: () => void;
+  className?: string
 };
 
 const Button = ({
   children,
   variant,
   buttonEvent,
+  className,
   size,
   href,
 }: ButtonColor) => {
@@ -63,7 +65,7 @@ const Button = ({
   if (size) {
     return (
       <Link href={`/${href}`}>
-        <button onClick={buttonEvent} className={sizes[size]}>
+        <button onClick={buttonEvent} className={`${sizes[size]} ${className} `} >
           {children}
         </button>
       </Link>

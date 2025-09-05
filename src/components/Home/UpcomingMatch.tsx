@@ -49,14 +49,16 @@ export default function UpcomingMatch() {
 
         {/* Center Content */}
         <div className="text-center mx-8">
-          <Text size="xl" weight="bold" > August 26, 2023 5:45 PM</Text>
-          <div className="flex gap-2.5 my-7 items-center">
-            <Text size="4xl" weight="bold" >Dragons</Text>
-            <Text size="base" weight="bold" > VS</Text>
-            <Text size="4xl" weight="bold" > Bulls</Text>
+          <Text size="xl" weight="bold" className="uppercase" > August 26, 2023 5:45 PM</Text>
+          <div className="flex gap-6.5 my-7 items-center">
+            <Text size="4xl" weight="bold" className="uppercase" >Dragons</Text>
+            <Text size="xl" weight="bold" className="uppercase" > VS</Text>
+            <Text size="4xl" weight="bold" className="uppercase" > Bulls</Text>
           </div>
            
-          <Button variant="orange" >GET TICKET</Button>
+          <div className="mt-10">
+            <Button variant="orange"  >get ticket</Button>
+          </div>
         </div>
 
         {/* Right Club */}
@@ -76,8 +78,8 @@ export default function UpcomingMatch() {
 
 
       {/* Countdown */}
-      <div className="mt-12 flex justify-center items-center">
-        <div className="flex space-x-4">
+      <div className="mt-14 ml-10 flex justify-center items-center ">
+        <div className="flex flex-col md:flex-row gap-2 space-x-1">
 
           <div className="flex flex-col justify-center items-center gap-3 py-5 px-2  w-[140px] h-[140px]  border-[1px] border-[#f6f6f633] rounded-sm">
             <Text size="5xl" color="white" weight="extrabold" >-608</Text>
@@ -85,17 +87,17 @@ export default function UpcomingMatch() {
           </div>
 
            <div className="flex flex-col justify-center items-center gap-4 py-5 px-3  w-[140px] h-[140px]  border-[1px] border-[#f6f6f633] rounded-sm">
-            <Text size="5xl" color="white" weight="extrabold" >0-8</Text>
+            <Text size="5xl" color="white" weight="extrabold" >0-28</Text>
             <p className="text-sm uppercase font-semibold text-white">Hours</p>
           </div>
 
           <div className="flex flex-col justify-center items-center gap-4 py-5 px-3  w-[140px] h-[140px] border-[1px] border-[#f6f6f633] rounded-sm">
-            <Text size="5xl" color="white" weight="extrabold" >1-0</Text>
+            <Text size="5xl" color="white" weight="extrabold" >0-40</Text>
             <p className="text-sm uppercase font-semibold text-white">Mitins</p>
           </div>
 
           <div className="flex flex-col justify-center items-center gap-4 py-5 px-3 w-[140px] h-[140px]  border-[1px] border-[#f6f6f633] rounded-sm">
-            <Text size="5xl" color="white" weight="extrabold" >5-9</Text>
+            <Text size="5xl" color="white" weight="extrabold" >0-09</Text>
             <p className="text-sm uppercase font-semibold text-white">Secound</p>
           </div>
 
