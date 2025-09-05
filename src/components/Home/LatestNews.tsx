@@ -49,7 +49,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-background p-4 md:p-8 mt-20">
       <div className="max-w-7xl mx-auto">
 
-        <div className="w-1/2 mx-auto">
+        <div className=" w-full lg:w-1/2 mx-auto">
             <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-4 text-center uppercase">OUR LATEST NEWS</h1>
              <p className="text-[#999999] font-normal text-[16px] roboto-font text-center mt-6 mb-14 " >Bangladesh Athletics Federation runs youth training programs and seasonal camps to develop emerging athletes nationwide.</p>
         </div>

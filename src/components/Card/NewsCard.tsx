@@ -18,7 +18,7 @@ export function SportsNewsCard({ title, category, author, date, backgroundImage 
   
 
   return (
-    <div className="relative group overflow-hidden  bg-gray-900 shadow-lg hover:shadow-xl  ">
+    <div className="relative group overflow-hidden bg-gray-900 shadow-lg hover:shadow-xl  ">
 
       {/* Background Image */}
       <div className="relative h-[410px] w-full ">
@@ -55,9 +55,6 @@ export function SportsNewsCard({ title, category, author, date, backgroundImage 
               <span className="text-sm text-white/80 drop-shadow-md">{date}</span>
             </div>
           </div>
-
-
-
 
         </div>
       </div>
